@@ -82,12 +82,6 @@ class="org.springframework.context.support.ReloadableResourceBundleMessageSource
 </beans:bean>
 <beans:bean id="registrationPO" class="com.locomate.java.beans.RegistrationPO"></beans:bean>
 <beans:bean id="user" class="com.locomate.java.hibernate.User"></beans:bean>
-<beans:bean id="LoginProxy"
-class="com.locomate.java.proxy.Impl.LoginProxyImpl"></beans:bean>
-<beans:bean id="RegistrationProxy"
-class="com.locomate.java.proxy.Impl.RegistrationProxyImpl"></beans:bean>
-	<context:component-scan base-package="com.locomate.java" />
-	
 	
 	
 </beans:beans>

@@ -1,11 +1,8 @@
 package com.locomate.java;
 
-import java.sql.Connection;
-import java.util.DuplicateFormatFlagsException;
 
 import javax.validation.Valid;
 
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -61,7 +58,7 @@ import java.util.Map;
 
 public class RegistrationController {
 	
-	
+	@Autowired
 	private RegistrationProxy registerproxy;
 	@RequestMapping("/register")
 	public String redirectToRegisterPage(Map<String, Object> map){

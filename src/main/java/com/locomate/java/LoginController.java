@@ -24,39 +24,38 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-	@Controller
-	
+	@Controller	
 	public class LoginController {
-	
-		private LoginProxy loinproxy;
+	    @Autowired
+		private LoginProxy loginproxy;
+		
 		@RequestMapping("/loginform")
 		public String showForm(Map<String, Object> map) {
 			
-		/*UserPO userpo=new UserPO();
-		model.addAttribute(userpo);
-			return "Login";*/
+		
 			 try {
 		         map.put("usermap", new User());
-		        /* map.put("registerList", loginproxy.list());*/
+		         map.put("loginLst", loginproxy.list());
 		     }catch(Exception e) {
 		         e.printStackTrace();
 		     }
 			return "Login";
 		}
 	 
-		
+			
 		@RequestMapping(value="/submitLogin")
 		public String list(@Valid User user,BindingResult result,Model model,
 				@ModelAttribute ("usermap")User login)throws IOException {
 	
 			if(result.hasErrors()){
-			
+				login.setLoginuserName(login.getLoginuserName());
+				login.setUserPassword(login.getUserPassword());
 			return "Login";
 			}
 	        try {
 	        	System.out.println("username===="+login.getLoginuserName());
 	        	System.out.println("username===="+login.getUserPassword());
-	        	loinproxy.saveUser(login);
+	        	loginproxy.saveUser(login);
 	           } catch(Exception e) {
 	            e.printStackTrace();
 	           }
