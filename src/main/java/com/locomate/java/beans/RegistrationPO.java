@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -15,9 +17,12 @@ public class RegistrationPO {
     @GeneratedValue
     @Column(name="registerId")
 	private Integer registratioId;
-
+    @NotNull
+    @Valid
 	@Column(name="username")
 	private String userName;
+    @NotNull
+    @Valid
 	@Column(name="pswd")
 	private String password;
 	
@@ -27,6 +32,7 @@ public class RegistrationPO {
 	private String lastName;
 	@Column(name="mobileNo")
 	private String mobileNumber;
+	@Email
 	@Column(name="email")
 	private String email;
 	@Column(name="occupation")

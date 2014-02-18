@@ -49,6 +49,7 @@
         <beans:property name="configLocation">
             <beans:value>classpath:hibernate.cfg.xml</beans:value>
         </beans:property>
+        
         <beans:property name="configurationClass">
             <beans:value>org.hibernate.cfg.AnnotationConfiguration</beans:value>
         </beans:property>
@@ -73,10 +74,14 @@
         class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <beans:property name="sessionFactory" ref="sessionFactory" />
 </beans:bean>
-<jpa:repositories base-package="com.acme.repositories" />
+<beans:bean id="messageSource"
 
-	<context:component-scan base-package="com.locomate.java" />
-	
+class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+
+<beans:property name="basename" value="/WEB-INF/mymessage" />
+</beans:bean>
+<beans:bean id="registrationPO" class="com.locomate.java.beans.RegistrationPO"></beans:bean>
+<beans:bean id="user" class="com.locomate.java.hibernate.User"></beans:bean>
 	
 	
 </beans:beans>

@@ -8,31 +8,33 @@ pageEncoding="ISO-8859-1"%>
 <title>Spring </title>
 </head>
 <body>
-    <%-- <form:form id="login" action="loginform.do" method="post"
-        commandName=""> --%>
-        <form action="./loginform" method="post">
+    <%-- <form:form  commandName="userform" action="./submitLogin" method="post"
+        > --%>
+      <form action="./loginform" method="post" name="">
+        <%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
         <table>
             <tr>
                 <td colspan="3"><h3> Login</h3></td>
             </tr>
             <tr>
                 <td><label>UserName</label></td>
-                <td><%-- <form:input path="userName"></form:input> --%>
-                <input type="text" id="userName" name="loginuserName">
+                <td> <%-- <form:input path="userName"></form:input>  --%>
+                <input type="text" id="userName" name="userName" >
                 </td>
-                <td><%-- <font color="red"><form:errors path="userName"></form:errors> --%></font></td>
+                <td> <%-- <font color="red"><form:errors path="userName"></form:errors> </font> --%></td>
             </tr>
             <tr>
                 <td><label>Password</label></td>
-                <td><%-- <form:input path="password" type="password"></form:input> --%>
-                <input type="password" id="password" name="userPassword">
+                <td> <%-- <form:input path="password" type="password"></form:input> --%>
+                <input type="password" id="password" name="password" >
                 </td>
-                <td><%-- <font color="red"><form:errors path="password"></form:errors> --%></font></td>
+                <td> <%-- <font color="red"><form:errors path="password"></form:errors> --%> </font></td>
             </tr>
             <tr>
-                <!-- <td colspan="1" align="center" ><input type="submit"
-                    value="Login" /></td> -->
-            <td><button id="" formaction="./submitLogin">Login</button></td>
+               
+            <td><button id=""  formaction="./submitLogin">Login</button>
+          <!--   <input type="submit"/> -->
+            </td>
                 <td colspan="1" align="center">
                 <button value="Register" formaction="./register">Register</button></td>
                 <td></td>
@@ -42,6 +44,6 @@ pageEncoding="ISO-8859-1"%>
             </tr>
         </table>
         </form>
-   <%--  </form:form> --%>
+    <%-- </form:form> --%>
 </body>
 </html>

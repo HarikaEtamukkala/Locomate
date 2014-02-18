@@ -7,8 +7,9 @@
 <title>Success</title>
 </head>
 <body>
-    <label>Welcome : <b>${User.userName}</b></label>
+    <label>Welcome : <b>${user.userName}</b></label>
     <br />
     <label>You Have Successfully Logged in.</label>
+    <a href="./logout">logout</a>
 </body>
 </html>

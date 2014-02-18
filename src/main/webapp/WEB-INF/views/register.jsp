@@ -47,7 +47,7 @@ return false; }
 <td><b>First, Last Name*:</b></td>
 
 <td>
-<input id="FirstName" name="FirstName" type="text" maxlength="60" style="width:146px; border:1px solid #999999" />
+<input id="FirstName" name="FirstName" type="text" maxlength="60"  style="width:146px; border:1px solid #999999" />
 <form:errors path="name" cssclass="error"></form:errors>
 <input id="LastName" name="LastName" type="text" maxlength="60" style="width:146px; border:1px solid #999999" />
 <form:errors path="name" cssclass="error"></form:errors>
@@ -64,19 +64,7 @@ return false; }
 </tr><tr>
 <td colspan="2" align="center">
 <br />
-<!-- <table border="0" cellpadding="0" cellspacing="0">
-<tr valign="top">
-<td>
-<i>Enter web form code*:</i>
-<input id="CaptchaCode" name="CaptchaCode" type="text" style="width:80px; border:1px solid #999999;" maxlength="6" />
-</td><td>
-<a href="http://www.SnapHost.com"><img id="CaptchaImage" alt="Web Form Code" title="Anti-spam web forms"
-style="margin-left:20px; border:1px solid #999999"
-src="http://www.SnapHost.com/captcha/WebForm.aspx?id=YN7YBJ7YDWGH&ImgType=2" /></a>
-<br /><a href="#" onclick="return ReloadCaptchaImage('CaptchaImage');"><span style="font-size:12px;">reload image</span></a>
-</td>
-</tr>
-</table> -->
+<
 <br />
 * - required fields. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 <input id="skip_Submit" name="skip_Submit" type="submit" value="Submit" />

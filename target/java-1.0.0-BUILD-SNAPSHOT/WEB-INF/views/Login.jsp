@@ -1,58 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+pageEncoding="ISO-8859-1"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
-<title>Login Page</title>
-<style>
-.errorblock {
-	color: #ff0000;
-	background-color: #ffEEEE;
-	border: 3px solid #ff0000;
-	padding: 8px;
-	margin: 16px;
-}
-</style>
-
+<title>Spring </title>
 </head>
-<body onload='document.f.j_username.focus();'>
-	<h3>Login with Username and Password (Custom Page)</h3>
- 
-	<c:if test="${not empty error}">
-		<div class="errorblock">
-			Your login attempt was not successful, try again.<br /> Caused :
-			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-		</div>
-	</c:if>
- 
-	<form name='f' action="<c:url value='j_spring_security_check' />"
-		method='POST'>
- 
-		<table>
-			<tr>
-				<td>User:</td>
-				<td><input type='text' name='j_username' value=''>
-				</td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='j_password' />
-				</td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="submit" type="submit"
-					value="submit" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="reset" type="reset" />
-				</td>
-				<td><a href="./register">Register</a></td>
-			</tr>
-		</table>
- 
-	</form>
-	
+<body>
+    <%-- <form:form id="login" action="loginform.do" method="post"
+        commandName=""> --%>
+        <form action="./loginform" method="post">
+        <table>
+            <tr>
+                <td colspan="3"><h3> Login</h3></td>
+            </tr>
+            <tr>
+                <td><label>UserName</label></td>
+                <td><%-- <form:input path="userName"></form:input> --%>
+                <input type="text" id="userName" name="loginuserName">
+                </td>
+                <td><%-- <font color="red"><form:errors path="userName"></form:errors> --%></font></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><%-- <form:input path="password" type="password"></form:input> --%>
+                <input type="password" id="password" name="userPassword">
+                </td>
+                <td><%-- <font color="red"><form:errors path="password"></form:errors> --%></font></td>
+            </tr>
+            <tr>
+                <!-- <td colspan="1" align="center" ><input type="submit"
+                    value="Login" /></td> -->
+            <td><button id="" formaction="./submitLogin">Login</button></td>
+                <td colspan="1" align="center">
+                <button value="Register" formaction="./register">Register</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center"><font color="red"><form:errors /></font></td>
+            </tr>
+        </table>
+        </form>
+   <%--  </form:form> --%>
 </body>
 </html>
