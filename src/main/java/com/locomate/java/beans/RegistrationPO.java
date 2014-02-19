@@ -36,6 +36,8 @@ public class RegistrationPO {
 	private String email;
 	@Column(name="occupation")
 	private String occupation;
+	
+	
 	public int getRegistratioId() {
 		return registratioId;
 	}

@@ -60,6 +60,8 @@ public class RegistrationController {
 	
 	@Autowired
 	private RegistrationProxy registerproxy;
+	@Autowired
+	private RegistrationPO registrationPO;
 	@RequestMapping("/register")
 	public String redirectToRegisterPage(Map<String, Object> map){
 		 try {
@@ -75,29 +77,32 @@ public class RegistrationController {
 
  
 	@RequestMapping("/submitForm")
-	public String submitRegisterForm(@Valid RegistrationPO registrationPO ,BindingResult result,
-			@ModelAttribute ("registermap")RegistrationPO register
+	public String submitRegisterForm(@Valid RegistrationPO validRegistrationPO ,BindingResult result,
+			Model model
+			
 			) throws IOException{
 		if(result.hasErrors()){
-		System.out.println("Name:" + register.getFirstName());
-        System.out.println("Email:" + register.getEmail());
-        register.setUserName(register.getUserName());
-        register.setPassword(register.getPassword());
-		register.setFirstName(register.getFirstName());
-		register.setLastName(register.getLastName());
-	    register.setMobileNumber(register.getMobileNumber());
-		register.setEmail(register.getEmail());
 		
-		register.setOccupation(register.getOccupation());
 		return "register";
 		}
         try {
-        	registerproxy.registerNewUser(register);
+        	System.out.println("Name:" + registrationPO.getFirstName());
+            System.out.println("Email:" + registrationPO.getEmail());
+            registrationPO.setUserName(registrationPO.getUserName());
+            registrationPO.setPassword(registrationPO.getPassword());
+            registrationPO.setFirstName(registrationPO.getFirstName());
+            registrationPO.setLastName(registrationPO.getLastName());
+            registrationPO.setMobileNumber(registrationPO.getMobileNumber());
+            registrationPO.setEmail(registrationPO.getEmail());
+    		
+            registrationPO.setOccupation(registrationPO.getOccupation());
+        	registerproxy.registerNewUser(registrationPO);
+        	model.addAttribute("flag", "fromregistration");
            } catch(Exception e) {
             e.printStackTrace();
         }
          
-        return "success";
+        return "redirect:loginform";
 	}
 	
 	

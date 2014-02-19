@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false"%>
 <html>
 <head>
 <title>Login</title>
-<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/bootstrap-theme.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet"></link>
+<link href="<c:url value="/resources/css/bootstrap-theme.min.css" />"  rel="stylesheet"></link>
+<link href="<c:url value="/resources/css/style.css" />"></link>
 <script src="<c:url value="/resources/js/jquery-1.11.0.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
@@ -27,12 +28,19 @@
 					<li><a href="./register">Registration</a></li>
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-			          <div class="dropdown-menu login">			            
-			          	<form action="./loginform" method="post" name="" role="form">
+			          <div class="dropdown-menu login">	
+			        <form:form action="./register" modelAttribute="RegistrationPO" commandName="registrationPO" method="post">
+			          <%-- 	<form action="./loginform" method="post" name="" role="form"> --%>
 							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
+							<c:out value="${RegistrationPO.referrer}====="></c:out>
+							<c:if test="${RegistrationPO.referrer eq frmregister}">
+							<div>
+							please Login...!!!!
+							</div>
+							</c:if>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label> 
-								<input type="email" class="form-control" id="userName" name="userName"
+								<input type="text" class="form-control" id="userName" name="userName"
 									placeholder="Enter Username">
 							</div>
 							<div class="form-group">
@@ -44,13 +52,15 @@
 							<br/>
 							<br/>
 							<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button>
-							<button value="Register" class="btn btn-primary pull-right" formaction="./register">Register</button>										
-						</form>
+							<button value="Register" class="btn btn-primary pull-right" type="submit">Register</button>		
+						<%-- </form> --%>
+						</form:form>
 			          </div>
 			        </li>
 				</ul>
 			</div>
 		</div>
+	
 	</nav>
 	<br /><br /><br />
 	<div class="container">

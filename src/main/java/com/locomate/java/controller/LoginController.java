@@ -21,6 +21,8 @@ import javax.validation.Valid;
 public class LoginController {
 	@Autowired
 	private LoginProxy loginproxy;
+	@Autowired
+	private RegistrationPO registrationPO;
 
 	/*
 	 * @Autowired private MessageHandler messageHandler;
@@ -43,18 +45,18 @@ public class LoginController {
 			Model model) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
 			/* messageHandler.addFieldMessages(result.getFieldErrors()); */
-			model.addAttribute(userLogin);
+			model.addAttribute(registrationPO);
 			return "Login";
 		}
-		String usrName = userLogin.getUserName();
-		String pswd = userLogin.getPassword();
+		String usrName = registrationPO.getUserName();
+		String pswd = registrationPO.getPassword();
 		Boolean Credentials = checkCredentials(usrName, pswd);
 		List<RegistrationPO> userFrmService = loginproxy.list();
 		if (Credentials) {
 			for (int i = 0; i <= userFrmService.size(); i++) {
 				if (userFrmService.get(i).getUserName().equals(usrName)
 						&& userFrmService.get(i).getPassword().equals(pswd)) {
-					model.addAttribute("user", userLogin);
+					model.addAttribute("user", registrationPO);
 					return "success";
 				}
 			}
