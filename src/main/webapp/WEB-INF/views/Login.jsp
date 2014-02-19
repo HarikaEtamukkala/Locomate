@@ -1,49 +1,133 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
-
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
 <html>
 <head>
-<title>Spring </title>
+<title>Login</title>
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/bootstrap-theme.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.11.0.min.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
-    <%-- <form:form  commandName="userform" action="./submitLogin" method="post"
-        > --%>
-      <form action="./loginform" method="post" name="">
-        <%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
-        <table>
-            <tr>
-                <td colspan="3"><h3> Login</h3></td>
-            </tr>
-            <tr>
-                <td><label>UserName</label></td>
-                <td> <%-- <form:input path="userName"></form:input>  --%>
-                <input type="text" id="userName" name="userName" >
-                </td>
-                <td> <%-- <font color="red"><form:errors path="userName"></form:errors> </font> --%></td>
-            </tr>
-            <tr>
-                <td><label>Password</label></td>
-                <td> <%-- <form:input path="password" type="password"></form:input> --%>
-                <input type="password" id="password" name="password" >
-                </td>
-                <td> <%-- <font color="red"><form:errors path="password"></form:errors> --%> </font></td>
-            </tr>
-            <tr>
-               
-            <td><button id=""  formaction="./submitLogin">Login</button>
-          <!--   <input type="submit"/> -->
-            </td>
-                <td colspan="1" align="center">
-                <button value="Register" formaction="./register">Register</button></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="3" align="center"><font color="red"><form:errors /></font></td>
-            </tr>
-        </table>
-        </form>
-    <%-- </form:form> --%>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="./">Locomate</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="./register">Registration</a></li>
+					<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+			          <div class="dropdown-menu login">			            
+			          	<form action="./loginform" method="post" name="" role="form">
+							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Username</label> 
+								<input type="email" class="form-control" id="userName" name="userName"
+									placeholder="Enter Username">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label> 
+								<input type="password" class="form-control" id="password"
+									name="password" placeholder="Enter Password">
+							</div>
+							<a href="./forgotPassword">Forgot Password?</a>
+							<br/>
+							<br/>
+							<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button>
+							<button value="Register" class="btn btn-primary pull-right" formaction="./register">Register</button>										
+						</form>
+			          </div>
+			        </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br /><br /><br />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+			<br/>
+			<h3>Login</h3>			
+			<hr>
+				<%-- <form:form  commandName="userform" action="./submitLogin" method="post"> --%>
+				<form action="./loginform" method="post" name="" role="form">
+					<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Username</label> 
+						<input type="email" class="form-control" id="userName" name="userName"
+							placeholder="Enter Username">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label> 
+						<input type="password" class="form-control" id="password"
+							name="password" placeholder="Enter Password">
+					</div>
+					<a href="./forgotPassword">Forgot Password?</a>
+					<br/>
+					<br/>
+					<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button> <!--   <input type="submit"/> -->
+					<button value="Register" class="btn btn-primary pull-right" formaction="./register">Register</button>										
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+			<!-- <table>
+				<tr>
+					<td colspan="3"><h3>Login</h3></td>
+				</tr>
+				<tr>
+					<td><label>UserName</label></td>
+					<td>
+						<%-- <form:input path="userName"></form:input>  --%> <input
+						type="text" id="userName" name="userName">
+					</td>
+					<td>
+						<%-- <font color="red"><form:errors path="userName"></form:errors> </font> --%>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td>
+						<%-- <form:input path="password" type="password"></form:input> --%>
+						<input type="password" id="password" name="password">
+					</td>
+					<td>
+						<%-- <font color="red"><form:errors path="password"></form:errors> --%>
+						</font>
+					</td>
+				</tr>
+				<tr>
+
+					<td>
+					</td>
+					<td colspan="1" align="center">
+						
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><font color="red"><form:errors /></font></td>
+				</tr>
+			</table> -->
+
+			<%-- </form:form> --%>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<hr/>
+			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite></p>
+		</div>
+	</footer>
 </body>
 </html>

@@ -38,10 +38,8 @@ public class LoginProxyImpl implements LoginProxy  {
 	public List<RegistrationPO> list() {
 		 Session session = sessionFactory.getCurrentSession();
 	        List<RegistrationPO> users = null;
-	        try {
-	        	
-	        	users = (List<RegistrationPO>)session.createQuery("from RegistrationPO").list();
-	        	
+	        try {	        	
+	        	users = (List<RegistrationPO>)session.createQuery("from RegistrationPO").list();	        	
 	        } catch (HibernateException e) {
 	            e.printStackTrace();
 	        }

@@ -1,6 +1,7 @@
 package com.locomate.java.controller;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -27,11 +28,10 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);		
+		String formattedDate = dateFormat.format(date);		
 		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));
 		
 		return "home";
 	}

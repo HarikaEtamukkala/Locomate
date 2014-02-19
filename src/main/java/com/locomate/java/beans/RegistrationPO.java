@@ -24,8 +24,7 @@ public class RegistrationPO {
     @NotNull
     @Valid
 	@Column(name="pswd")
-	private String password;
-	
+	private String password;	
 	@Column(name="firstName")
 	private String firstName;
 	@Column(name="lastName")
