@@ -30,7 +30,7 @@
 							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label> 
-								<input type="email" class="form-control" id="userName" name="userName"
+								<input type="text" class="form-control" id="userName" name="userName"
 									placeholder="Enter Username">
 							</div>
 							<div class="form-group">
