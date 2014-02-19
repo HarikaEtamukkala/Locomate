@@ -32,12 +32,12 @@
 			        <form:form action="./register" modelAttribute="RegistrationPO" commandName="registrationPO" method="post">
 			          <%-- 	<form action="./loginform" method="post" name="" role="form"> --%>
 							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
-							<c:out value="${RegistrationPO.referrer}====="></c:out>
+							<%-- <c:out value="${RegistrationPO.referrer}====="></c:out>
 							<c:if test="${RegistrationPO.referrer eq frmregister}">
 							<div>
 							please Login...!!!!
 							</div>
-							</c:if>
+							</c:if> --%>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label> 
 								<input type="text" class="form-control" id="userName" name="userName"

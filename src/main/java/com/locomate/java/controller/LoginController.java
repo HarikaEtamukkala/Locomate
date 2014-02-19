@@ -44,13 +44,8 @@ public class LoginController {
 	public String list(@Valid RegistrationPO userLogin, BindingResult result,
 			Model model) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
-<<<<<<< HEAD
-			/* messageHandler.addFieldMessages(result.getFieldErrors());*/
-			model.addAttribute(userLogin);
-=======
 			/* messageHandler.addFieldMessages(result.getFieldErrors()); */
 			model.addAttribute(registrationPO);
->>>>>>> 2d770f901575ccdd66dada33d5f548a32d0c419f
 			return "Login";
 		}
 		String usrName = registrationPO.getUserName();
