@@ -42,7 +42,7 @@ public class LoginController {
 	public String list(@Valid RegistrationPO userLogin, BindingResult result,
 			Model model) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
-			/* messageHandler.addFieldMessages(result.getFieldErrors()); */
+			/* messageHandler.addFieldMessages(result.getFieldErrors());*/
 			model.addAttribute(userLogin);
 			return "Login";
 		}
