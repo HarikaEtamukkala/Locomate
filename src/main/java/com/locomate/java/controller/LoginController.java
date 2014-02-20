@@ -27,7 +27,6 @@ public class LoginController {
 	/*
 	 * @Autowired private MessageHandler messageHandler;
 	 */
-
 	@RequestMapping("/loginform")
 	public String showForm(Map<String, Object> map) {
 
@@ -41,7 +40,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/submitLogin")
-	public String list(@Valid RegistrationPO userLogin, BindingResult result,
+	public String list(@Valid RegistrationPO registrationPO, BindingResult result,
 			Model model) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
 			/* messageHandler.addFieldMessages(result.getFieldErrors()); */
@@ -57,11 +56,11 @@ public class LoginController {
 				if (userFrmService.get(i).getUserName().equals(usrName)
 						&& userFrmService.get(i).getPassword().equals(pswd)) {
 					model.addAttribute("user", registrationPO);
-					return "success";
+					return "dashboard";
 				}
 			}
 		}
-		throw new IllegalArgumentException("username " + usrName + "not found or password" + pswd + "not found");
+		throw new IllegalArgumentException("username " + usrName + " not found or password" + pswd + " not found");
 	}
 
 	private boolean checkCredentials(String usrName, String pswd) {

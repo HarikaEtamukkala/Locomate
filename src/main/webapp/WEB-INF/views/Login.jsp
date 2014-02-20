@@ -25,38 +25,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./register">Registration</a></li>
-					<li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-			          <div class="dropdown-menu login">	
-			        <form:form action="./register" modelAttribute="RegistrationPO" commandName="registrationPO" method="post">
-			          <%-- 	<form action="./loginform" method="post" name="" role="form"> --%>
-							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
-							<%-- <c:out value="${RegistrationPO.referrer}====="></c:out>
-							<c:if test="${RegistrationPO.referrer eq frmregister}">
-							<div>
-							please Login...!!!!
-							</div>
-							</c:if> --%>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Username</label> 
-								<input type="text" class="form-control" id="userName" name="userName"
-									placeholder="Enter Username">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label> 
-								<input type="password" class="form-control" id="password"
-									name="password" placeholder="Enter Password">
-							</div>
-							<a href="./forgotPassword">Forgot Password?</a>
-							<br/>
-							<br/>
-							<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button>
-							<button value="Register" class="btn btn-primary pull-right" type="submit">Register</button>		
-						<%-- </form> --%>
-						</form:form>
-			          </div>
-			        </li>
+					<li><a href="./register">Registration</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -74,14 +43,14 @@
 				<form action="./loginform" method="post" name="" role="form">
 					<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Username</label> 
-						<input type="email" class="form-control" id="userName" name="userName"
+						<label for="UserName">Username</label> 
+						<input type="text" class="form-control" id="UserName" name="UserName"
 							placeholder="Enter Username">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label> 
-						<input type="password" class="form-control" id="password"
-							name="password" placeholder="Enter Password">
+						<label for="Password">Password</label> 
+						<input type="password" class="form-control" id="Password"
+							name="Password" placeholder="Enter Password">
 					</div>
 					<a href="./forgotPassword">Forgot Password?</a>
 					<br/>
