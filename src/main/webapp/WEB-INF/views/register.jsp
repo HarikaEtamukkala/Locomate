@@ -61,7 +61,7 @@
 			<br/>
 			<h3>Sign Up</h3>
 			<hr>
-				<form:form modelAttribute="RegistrationPO" action="./submitForm" id="" method="post" onsubmit="return ValidateForm(this);" role="form">
+				<form:form commandName="registerpo" action="./submitForm" id="" method="post" onsubmit="return ValidateForm(this);" role="form">
 					<input id="SnapHostID" name="SnapHostID" type="hidden" value="YN7YBJ7YDWGH" />
 					<script type="text/javascript">
 						function ValidateForm(frm) {

@@ -35,7 +35,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -68,40 +67,6 @@
 		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
 			<version>3.2.5.RELEASE</version> </dependency> -->
 
-=======
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>2.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>3.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>3.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>3.0.0.RELEASE</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
-			<version>3.2.5.RELEASE</version> </dependency> -->
-
->>>>>>> git my first commit
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
@@ -132,7 +97,6 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -151,26 +115,6 @@
 
 		<!-- Esapi -->
 		<dependency>
-=======
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>1.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.3</version>
-		</dependency>
-
-		<!-- Esapi -->
-		<dependency>
->>>>>>> git my first commit
 			<groupId>org.owasp.esapi</groupId>
 			<artifactId>esapi</artifactId>
 			<version>2.0.1</version>
@@ -254,7 +198,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-<<<<<<< HEAD
 		
 		<!-- Spring Support -->
 		<dependency>
@@ -268,9 +211,6 @@
 		  <artifactId>mail</artifactId>
 		  <version>1.4.5</version>
 		</dependency>
-=======
-
->>>>>>> git my first commit
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

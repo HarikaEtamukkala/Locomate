@@ -43,7 +43,7 @@ public class LoginController {
 	 * @Autowired private MessageHandler messageHandler;
 	 */
 	@RequestMapping("/loginform")	
-	public String showForm(Map<String, Object> map) {
+	public String showForm(Map<String, Object> map,@ModelAttribute("registerpo") RegistrationPO register) {
 		try {
 			map.put("usermap", new RegistrationPO());
 			map.put("loginLst", loginproxy.list());
@@ -60,7 +60,6 @@ public class LoginController {
 			model.addAttribute(registrationPO);			
 			return "Login";
 		}
-		System.out.println("======"+register.getUserName());
 		String usrName = register.getUserName();
 		String pswd = register.getPassword();
 		Boolean Credentials = checkCredentials(usrName, pswd);
