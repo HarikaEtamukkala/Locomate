@@ -42,14 +42,8 @@ public class LoginController {
 	/*
 	 * @Autowired private MessageHandler messageHandler;
 	 */
-<<<<<<< HEAD
-	@RequestMapping("/loginform")
-	public String showForm(@ModelAttribute("registerpo") RegistrationPO registrationPO,Map<String, Object> map) {
-=======
 	@RequestMapping("/loginform")	
 	public String showForm(Map<String, Object> map) {
->>>>>>> 56e5d9b4721be10d8bdc2027b08a9e97f3e8dce7
-
 		try {
 			map.put("usermap", new RegistrationPO());
 			map.put("loginLst", loginproxy.list());
