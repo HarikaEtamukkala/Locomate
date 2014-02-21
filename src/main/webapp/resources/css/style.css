@@ -1,7 +1,26 @@
 @CHARSET "ISO-8859-1";
 
+.login{width:500px;padding:15px;}
+.main{min-height:500px;}
+.page-center{margin-top:15%;text-align: center;}
 
-.login{
-	width:500px;
-	padding:15px;
+.gridster li{
+	list-style: none;
+	background-color: white;	
+	text-align: center;
+	vertical-align: middle;
+	padding:auto;
 }
+
+.gridster .search{position:relative;margin: auto;}
+.gridster .glyphicon{font-size:32px;}
+.blackbg{background-color: #444444;}
+.frame{width:75%;}
+.blue{color:#3276b1;}
+.bluebg{background-color:#3276b1 !important; color:white;}
+.greenbg{background-color:#5cb85c !important; color:white;}
+.skybluebg{background-color:#5bc0de !important; color:white;}
+.spanwhite{font-size: 24px; color:black;}
+.glyphicon-search{background-image:url('../images/ic_fordon-web.png');}
+
+

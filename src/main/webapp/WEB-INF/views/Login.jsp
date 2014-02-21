@@ -21,7 +21,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./">Locomate</a>
+				<a class="navbar-brand" href="#"><img src='<c:url value="/resources/images/fordon_small.png"/>'/>&nbsp;Locomate</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -32,7 +32,7 @@
 	
 	</nav>
 	<br /><br /><br />
-	<div class="container">
+	<div class="container main">
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
@@ -61,52 +61,20 @@
 				</form:form>
 			</div>
 			<div class="col-md-4"></div>
-			<!-- <table>
-				<tr>
-					<td colspan="3"><h3>Login</h3></td>
-				</tr>
-				<tr>
-					<td><label>UserName</label></td>
-					<td>
-						<%-- <form:input path="userName"></form:input>  --%> <input
-						type="text" id="userName" name="userName">
-					</td>
-					<td>
-						<%-- <font color="red"><form:errors path="userName"></form:errors> </font> --%>
-					</td>
-				</tr>
-				<tr>
-					<td><label>Password</label></td>
-					<td>
-						<%-- <form:input path="password" type="password"></form:input> --%>
-						<input type="password" id="password" name="password">
-					</td>
-					<td>
-						<%-- <font color="red"><form:errors path="password"></form:errors> --%>
-						</font>
-					</td>
-				</tr>
-				<tr>
-
-					<td>
-					</td>
-					<td colspan="1" align="center">
-						
-					</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center"><font color="red"><form:errors /></font></td>
-				</tr>
-			</table> -->
-
-			<%-- </form:form> --%>
 		</div>
 	</div>
 	<footer>
 		<div class="container">
 			<hr/>
-			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite></p>
+			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite>
+				<span class="pull-right">
+					<a href="adout.jsp" target="_blank">About US</a>&nbsp;
+					<a href="terms.jsp" target="_blank">Terms of Use</a> &nbsp;
+					<a href="privacy.jsp" target="_blank">Privacy Policy</a> &nbsp;								
+					<a href="team.jsp" target="_blank">Team</a> &nbsp;
+					<a href="Careers.jsp" target="_blank">Careers</a>					
+				</span>
+			</p>
 		</div>
 	</footer>
 </body>

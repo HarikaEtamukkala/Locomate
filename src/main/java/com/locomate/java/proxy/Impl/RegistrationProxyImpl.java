@@ -8,7 +8,10 @@ import java.util.List;
 
 
 
+
+
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +32,7 @@ public class RegistrationProxyImpl implements RegistrationProxy {
     public  RegistrationProxyImpl(SessionFactory sessionFactory) {
     	 RegistrationProxyImpl.sessionFactory = sessionFactory;
 	}
+    
     @Transactional
     public RegistrationPO registerNewUser(RegistrationPO register) {
         Session session = sessionFactory.getCurrentSession();
@@ -42,13 +46,12 @@ public class RegistrationProxyImpl implements RegistrationProxy {
         Session session = sessionFactory.getCurrentSession();
         List<RegistrationPO> registrationdetails = null;
         try {
-        	registrationdetails = (List<RegistrationPO>)session.createQuery("from RegistrationPO").list();
- 
+        	registrationdetails = (List<RegistrationPO>)session.createQuery("from RegistrationPO where ").list();
         } catch (HibernateException e) {
             e.printStackTrace();
         }
         return registrationdetails;
-    }
+    }    
      
     @Transactional
     public RegistrationPO get(Integer id) {
@@ -58,10 +61,8 @@ public class RegistrationProxyImpl implements RegistrationProxy {
  
     @Transactional
     public void remove(Integer id) {
-        Session session = sessionFactory.getCurrentSession();
-         
-        RegistrationPO document = (RegistrationPO)session.get(RegistrationPO.class, id);
-         
+        Session session = sessionFactory.getCurrentSession();        
+        RegistrationPO document = (RegistrationPO)session.get(RegistrationPO.class, id);         
         session.delete(document);
     }
 }

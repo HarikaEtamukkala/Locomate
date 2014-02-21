@@ -1,35 +1,54 @@
 package com.locomate.java.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.locomate.java.beans.RegistrationPO;
 import com.locomate.java.proxy.LoginProxy;
 import com.locomate.java.validations.LoginPOValidator;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
+@SessionAttributes({"name","username"})
 public class LoginController {
+	
 	@Autowired
 	private LoginProxy loginproxy;
+	
 	@Autowired
 	private RegistrationPO registrationPO;
-
+	
+	@Autowired
+	private RegistrationPO sessionRegister;
+	
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	
 	/*
 	 * @Autowired private MessageHandler messageHandler;
 	 */
+<<<<<<< HEAD
 	@RequestMapping("/loginform")
 	public String showForm(@ModelAttribute("registerpo") RegistrationPO registrationPO,Map<String, Object> map) {
+=======
+	@RequestMapping("/loginform")	
+	public String showForm(Map<String, Object> map) {
+>>>>>>> 56e5d9b4721be10d8bdc2027b08a9e97f3e8dce7
 
 		try {
 			map.put("usermap", new RegistrationPO());
@@ -44,8 +63,7 @@ public class LoginController {
 	public String list(@Valid RegistrationPO registrationPO, BindingResult result,
 			Model model,@ModelAttribute("registerpo") RegistrationPO register) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
-			/* messageHandler.addFieldMessages(result.getFieldErrors()); */
-			model.addAttribute(registrationPO);
+			model.addAttribute(registrationPO);			
 			return "Login";
 		}
 		System.out.println("======"+register.getUserName());
@@ -56,9 +74,11 @@ public class LoginController {
 		if (Credentials) {
 			for (int i = 0; i <= userFrmService.size(); i++) {
 				if (userFrmService.get(i).getUserName().equals(usrName)
-						&& userFrmService.get(i).getPassword().equals(pswd)) {
-					model.addAttribute("user", registrationPO);
-					return "dashboard";
+						&& userFrmService.get(i).getPassword().equals(pswd)) {					
+					sessionRegister=loginproxy.getUser(usrName);					
+					model.addAttribute("username", usrName);
+					model.addAttribute("name", sessionRegister.getFirstName()+" "+sessionRegister.getLastName());
+					return "redirect:dashboard";
 				}
 			}
 		}
@@ -75,9 +95,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout() {
-
 		return "home";
-
 	}
 
 }
