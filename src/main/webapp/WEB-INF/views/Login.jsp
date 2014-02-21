@@ -39,8 +39,8 @@
 			<br/>
 			<h3>Login</h3>			
 			<hr>
-				<%-- <form:form  commandName="userform" action="./submitLogin" method="post"> --%>
-				<form action="./loginform" method="post" name="" role="form">
+				<form:form  commandName="registerpo" action="./submitLogin" method="post">
+				<%-- <form action="./loginform" method="post" name="" role="form"> --%>
 					<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
 					<div class="form-group">
 						<label for="UserName">Username</label> 
@@ -55,9 +55,10 @@
 					<a href="./forgotPassword">Forgot Password?</a>
 					<br/>
 					<br/>
-					<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button> <!--   <input type="submit"/> -->
+					<button id="" class="btn btn-primary pull-left" type="submit">Login</button> <!--   <input type="submit"/> -->
 					<button value="Register" class="btn btn-primary pull-right" formaction="./register">Register</button>										
-				</form>
+				<%-- </form> --%>
+				</form:form>
 			</div>
 			<div class="col-md-4"></div>
 		</div>

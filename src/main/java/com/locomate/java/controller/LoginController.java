@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -41,8 +42,13 @@ public class LoginController {
 	/*
 	 * @Autowired private MessageHandler messageHandler;
 	 */
+<<<<<<< HEAD
+	@RequestMapping("/loginform")
+	public String showForm(@ModelAttribute("registerpo") RegistrationPO registrationPO,Map<String, Object> map) {
+=======
 	@RequestMapping("/loginform")	
 	public String showForm(Map<String, Object> map) {
+>>>>>>> 56e5d9b4721be10d8bdc2027b08a9e97f3e8dce7
 
 		try {
 			map.put("usermap", new RegistrationPO());
@@ -55,13 +61,14 @@ public class LoginController {
 
 	@RequestMapping(value = "/submitLogin")
 	public String list(@Valid RegistrationPO registrationPO, BindingResult result,
-			Model model) throws IOException, IllegalArgumentException {
+			Model model,@ModelAttribute("registerpo") RegistrationPO register) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
 			model.addAttribute(registrationPO);			
 			return "Login";
 		}
-		String usrName = registrationPO.getUserName();
-		String pswd = registrationPO.getPassword();
+		System.out.println("======"+register.getUserName());
+		String usrName = register.getUserName();
+		String pswd = register.getPassword();
 		Boolean Credentials = checkCredentials(usrName, pswd);
 		List<RegistrationPO> userFrmService = loginproxy.list();
 		if (Credentials) {
