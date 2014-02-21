@@ -5,15 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
-import org.springframework.context.annotation.Scope;
 
 @Entity
-@Scope("session")
 @Table(name="registrationdetails")
 public class RegistrationPO {
 	@Id
@@ -39,15 +36,8 @@ public class RegistrationPO {
 	private String email;
 	@Column(name="occupation")
 	private String occupation;
-	@Transient
-	private String referrer;
 	
-	public String getReferrer() {
-		return referrer;
-	}
-	public void setReferrer(String referrer) {
-		this.referrer = referrer;
-	}
+	
 	public int getRegistratioId() {
 		return registratioId;
 	}

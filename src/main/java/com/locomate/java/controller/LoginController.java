@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.locomate.java.beans.RegistrationPO;
@@ -44,7 +43,9 @@ public class LoginController {
 	 * @Autowired private MessageHandler messageHandler;
 	 */
 	@RequestMapping("/loginform")	
-	public String showForm(Map<String, Object> map,@ModelAttribute("registerpo") RegistrationPO register) {
+	public String showForm(Map<String, Object> map) {
+
+
 		try {
 			map.put("usermap", new RegistrationPO());
 			map.put("loginLst", loginproxy.list());
@@ -56,8 +57,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/submitLogin")
 	public String list(@Valid RegistrationPO registrationPO, BindingResult result,
-			Model model,@ModelAttribute("registerpo") RegistrationPO register,
-			@RequestParam(value="referrer",required=false)String referrer) throws IOException, IllegalArgumentException {
+			Model model,@ModelAttribute("registerpo") RegistrationPO register) throws IOException, IllegalArgumentException {
 		if (result.hasErrors()) {
 			model.addAttribute(registrationPO);			
 			return "Login";
@@ -68,7 +68,7 @@ public class LoginController {
 		Boolean Credentials = checkCredentials(usrName, pswd);
 		List<RegistrationPO> userFrmService = loginproxy.list();
 		if (Credentials) {
-			for (int i = 0; i <userFrmService.size(); i++) {
+			for (int i = 0; i <= userFrmService.size(); i++) {
 				if (userFrmService.get(i).getUserName().equals(usrName)
 						&& userFrmService.get(i).getPassword().equals(pswd)) {					
 					sessionRegister=loginproxy.getUser(usrName);					
