@@ -58,10 +58,7 @@
 			    <ul>
 			    	<!-- Row 1 -->
 			        <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-				        <br/>
-				        <br/>
-				        <br/>
-				        <br/>
+				        <br/><br/><br/><br/>
                        	<img src='<c:url value="/resources/images/fordon-selected.png"/>' />
                        	<br/>
                        	<h1>Locomate</h1>
@@ -97,8 +94,7 @@
 				        	<br>
 				        	Offer Ride
 			        	</p>					        			        
-			        </li>
-					
+			        </li>					
 					<!-- Row 3  -->
 					<li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
 			        	<br>
@@ -127,7 +123,15 @@
 	<footer>
 		<div class="container">
 			<hr/>
-			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite></p>
+			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite>
+				<span class="pull-right">
+					<a href="adout.jsp" target="_blank">About US</a>&nbsp;
+					<a href="terms.jsp" target="_blank">Terms of Use</a> &nbsp;
+					<a href="privacy.jsp" target="_blank">Privacy Policy</a> &nbsp;								
+					<a href="team.jsp" target="_blank">Team</a> &nbsp;
+					<a href="Careers.jsp" target="_blank">Careers</a>					
+				</span>
+			</p>
 		</div>
 	</footer>
 </body>

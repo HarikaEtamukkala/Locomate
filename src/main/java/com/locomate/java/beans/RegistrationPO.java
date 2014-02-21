@@ -9,8 +9,10 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
+import org.springframework.context.annotation.Scope;
 
 @Entity
+@Scope("session")
 @Table(name="registrationdetails")
 public class RegistrationPO {
 	@Id

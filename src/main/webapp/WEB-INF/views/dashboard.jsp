@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <html>
 <head>
-<title>Locomate</title>
+<title></title>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/bootstrap-theme.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
@@ -19,18 +18,18 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src='<c:url value="/resources/images/fordon_small.png"/>'/>&nbsp;Locomate</a>
+				<a class="navbar-brand" href="#"><img src='<c:url value="/resources/images/logosmall.png"/>'/>&nbsp;Locomate</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./register">Registration</a></li>
+					<li><a href="./postride">Post Ride</a></li>
 					<li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${username}<b class="caret"></b></a>
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${name}<b class="caret"></b></a>
 			          <ul class="dropdown-menu">
 			            <li><a href="#">Edit Account</a></li>
-			            <li><a href="#">Change ID</a></li>
+			            <li><a href="#">Change Password</a></li>
 			            <li class="divider"></li>
-			            <li><a href="#">Logout</a></li>
+			            <li><a href="./logout">Logout</a></li>
 			          </ul>
 			        </li>				
 				</ul>
@@ -45,7 +44,7 @@
 			        <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
                        	<img src='<c:url value="/resources/images/profilebig.png"/>' class="img-circle frame" />
                        	<br/>
-                       	<h4>Avinash Vundyala</h4>
+                       	<h4>${name}</h4>
 			        </li>			        			        			 	
 			 		<li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
 			 			<br/>
@@ -77,8 +76,7 @@
 				        	<br>
 				        	Offer Ride
 			        	</p>					        			        
-			        </li>
-					
+			        </li>					
 					<!-- Row 3  -->
 					<li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
 			        	<br>
@@ -107,7 +105,8 @@
 	<footer>
 		<div class="container">
 			<hr/>
-			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite></p>
+			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite>
+			</p>
 		</div>
 	</footer>
 </body>

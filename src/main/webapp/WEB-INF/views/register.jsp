@@ -122,45 +122,6 @@
 					</div>
 					<br/>
 					<label>* - required fields.</label> <input id="skip_Submit" name="skip_Submit" type="submit"  class="btn btn-primary pull-right" value="Submit" />
-					
-					<!--  <table border="0" cellpadding="5" cellspacing="0" width="600">
-					<tr>
-					<td>UserName:</td><td>
-					<input id="UserName" name="UserName" type="text" maxlength="60" style="width:146px; border:1px solid #999999"/>
-					</td></tr>
-					<tr>
-					<tr>
-					<td>password:</td><td>
-					
-					<input id="password" name="password" type="password" maxlength="60" style="width:146px; border:1px solid #999999" />
-					</td></tr>
-					<tr>
-					<td><b>First, Last Name*:</b></td>
-					
-					<td>
-					<input id="FirstName" name="FirstName" type="text" maxlength="60"  style="width:146px; border:1px solid #999999" />
-					<form:errors path="name" cssclass="error"></form:errors>
-					<input id="LastName" name="LastName" type="text" maxlength="60" style="width:146px; border:1px solid #999999" />
-					<form:errors path="name" cssclass="error"></form:errors>
-					</td>
-					</tr><tr>
-					<td><b>Occupation*:</b></td>
-					<td><input id="Occupation" name="Occupation" type="text" maxlength="60" style="width:300px; border:1px solid #999999" /></td>
-					</tr><tr>
-					<td><b>Email address*:</b></td>
-					<td><input id="FromEmailAddress" name="email" type="text" maxlength="60" style="width:300px; border:1px solid #999999" /></td>
-					
-					<td><b>Cell Phone:</b></td>
-					<td><input id="mobileNumber" name="mobileNumber" type="text" maxlength="43" style="width:250px; border:1px solid #999999" /></td>
-					</tr><tr>
-					<td colspan="2" align="center">
-					<br />
-					<br />
-					* - required fields. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-					<input id="skip_Submit" name="skip_Submit" type="submit" value="Submit" />
-					</td>
-					</tr>
-					</table>-->
 					<br />
 				</form:form>
 			</div>
@@ -170,7 +131,15 @@
 	<footer>
 		<div class="container">
 			<hr/>
-			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite></p>
+			<p>Copyrights &copy; ${year} | <cite title="Source Title">Locomate</cite>
+				<span class="pull-right">
+					<a href="adout.jsp" target="_blank">About US</a>&nbsp;
+					<a href="terms.jsp" target="_blank">Terms of Use</a> &nbsp;
+					<a href="privacy.jsp" target="_blank">Privacy Policy</a> &nbsp;								
+					<a href="team.jsp" target="_blank">Team</a> &nbsp;
+					<a href="Careers.jsp" target="_blank">Careers</a>					
+				</span>
+			</p>
 		</div>
 	</footer>
 </body>
