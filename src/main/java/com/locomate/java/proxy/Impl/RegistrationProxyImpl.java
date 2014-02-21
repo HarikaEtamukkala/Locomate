@@ -29,6 +29,7 @@ public class RegistrationProxyImpl implements RegistrationProxy {
     public  RegistrationProxyImpl(SessionFactory sessionFactory) {
     	 RegistrationProxyImpl.sessionFactory = sessionFactory;
 	}
+    
     @Transactional
     public RegistrationPO registerNewUser(RegistrationPO register) {
         Session session = sessionFactory.getCurrentSession();

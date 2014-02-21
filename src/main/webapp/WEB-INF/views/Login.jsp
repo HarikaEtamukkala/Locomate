@@ -21,7 +21,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./">Locomate</a>
+				<a class="navbar-brand" href="#"><img src='<c:url value="/resources/images/fordon_small.png"/>'/>&nbsp;Locomate</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -32,7 +32,7 @@
 	
 	</nav>
 	<br /><br /><br />
-	<div class="container">
+	<div class="container main">
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">

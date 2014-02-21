@@ -17,8 +17,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
  
+
+
 
 
 
@@ -27,6 +32,8 @@ import javax.servlet.http.HttpServletResponse;
  
 
  
+
+
 
 
 
@@ -52,6 +59,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.util.Map;
 
 @Controller
@@ -63,19 +71,17 @@ public class RegistrationController {
 	@Autowired
 	private RegistrationPO registrationPO;
 	@RequestMapping("/register")
-	public String redirectToRegisterPage(Map<String, Object> map){
+	public String redirectToRegisterPage(Map<String, Object> map,Model model){
 		 try {
 	         map.put("registermap", new RegistrationPO());
-	         map.put("registerList", registerproxy.list());
+	         map.put("registerList", registerproxy.list());		
+	 		 model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 	     }catch(Exception e) {
 	         e.printStackTrace();
 	     }
 		return "register";
 	}
 	
-
-
- 
 	@RequestMapping("/submitForm")
 	public String submitRegisterForm(@Valid RegistrationPO validRegistrationPO ,BindingResult result,
 			Model model

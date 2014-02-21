@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoginProxyImpl implements LoginProxy  {
 
-	 @Autowired
+	    @Autowired
 	    private static SessionFactory sessionFactory;
 
 	    @Autowired
@@ -44,11 +44,8 @@ public class LoginProxyImpl implements LoginProxy  {
 	            e.printStackTrace();
 	        }
 	        return users;
-
 	}
-
-	
-	}
+}
 	
 
 	

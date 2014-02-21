@@ -1,5 +1,7 @@
 package com.locomate.java.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +21,12 @@ import javax.validation.Valid;
 
 @Controller
 public class LoginController {
+	
 	@Autowired
 	private LoginProxy loginproxy;
 	@Autowired
 	private RegistrationPO registrationPO;
-
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	/*
 	 * @Autowired private MessageHandler messageHandler;
 	 */
@@ -56,6 +59,7 @@ public class LoginController {
 				if (userFrmService.get(i).getUserName().equals(usrName)
 						&& userFrmService.get(i).getPassword().equals(pswd)) {
 					model.addAttribute("user", registrationPO);
+					model.addAttribute("username",usrName);
 					return "dashboard";
 				}
 			}

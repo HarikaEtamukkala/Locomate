@@ -5,9 +5,8 @@
 <title>Locomate</title>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/bootstrap-theme.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/jquery.gridster.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/jquery-1.11.0.min.js" />"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -18,7 +17,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Locomate</a>
+				<a class="navbar-brand" href="#"><img src='<c:url value="/resources/images/fordon_small.png"/>'/>&nbsp;Locomate</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -53,14 +52,77 @@
 	<br/>
 	<br/>
 	<br/>
-	<div class="container">
-		<div class="jumbotron">
-		  <div class="container">
-		    <h1>Welcome!</h1>
-				<P>The time on the server is ${serverTime}.</P>
-				<p><a href="./loginform" class="btn btn-primary btn-lg" role="button">Login</a></p>
-		  </div>
-		</div>
+	<div class="container main">
+		<div class="row well blackbg">
+	  		<div class="gridster">
+			    <ul>
+			    	<!-- Row 1 -->
+			        <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+				        <br/>
+				        <br/>
+				        <br/>
+				        <br/>
+                       	<img src='<c:url value="/resources/images/fordon-selected.png"/>' />
+                       	<br/>
+                       	<h1>Locomate</h1>
+                       	<h6>Make your Journey Exceptionally Good</h6>
+			        </li>			        			        			 	
+			 		<li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+			 			<br/>
+			 			<h1 class="blue"><span class="glyphicon glyphicon-road"></span>&nbsp;4800<br><span class="spanwhite">Kilometers</span></h1>
+			 		</li>	        				 
+			        <li data-row="1" data-col="5" data-sizex="2" data-sizey="1">
+			        	<br>
+			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;5<span class="spanwhite"> &nbsp;Cities</span></h1>
+			        </li>
+			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1" class="btn skybluebg">
+			        	<br>
+			        	<p class="search">
+			        		<span class="glyphicon glyphicon-info-sign"></span>
+				        	<br>
+				        	Know More
+			        	</p>					        			        
+			        </li>
+			        
+			        <!-- Row 2 -->
+			        <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+			 			<br>
+			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;31<br><span class="spanwhite">Destinations</span></h1>
+			 		</li>	
+			        <li data-row="2" data-col="5" data-sizex="2" data-sizey="1"></li>			
+					<li data-row="2" data-col="7" data-sizex="1" data-sizey="1" class="btn greenbg">
+			        	<br>
+			        	<p class="search">
+			        		<span class="glyphicon glyphicon-comment"></span>
+				        	<br>
+				        	Offer Ride
+			        	</p>					        			        
+			        </li>
+					
+					<!-- Row 3  -->
+					<li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+			        	<br>
+			 			<img src='<c:url value="/resources/images/friend.png" />' width='32px;'><span style='font-size:35px; color: #3276b1;'>Thousands</span><br>of Friendships made <br>on the road
+			 		</li>
+					<li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
+			 			<br>
+			        	<img src='<c:url value="/resources/images/gas.png" />'><span style='font-size:35px; color: #3276b1;'>Millions</span> <br>of liters gas saved
+			        </li>	
+					<li data-row="3" data-col="5" data-sizex="2" data-sizey="1">
+			        	<br>
+			        	<img src='<c:url value="/resources/images/co2.png"/>'><span style='font-size:35px; color: #3276b1;'>Million</span> <br>of Tons of Carbon <br>Emissions saved
+			        </li>	
+			        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1" class="btn bluebg">
+			        	<br>
+			        	<p class="search">
+			        		<span class="glyphicon glyphicon-search"></span>
+				        	<br>
+				        	Search Ride
+			        	</p>					        			        
+			        </li>
+			    </ul>
+			</div>
+		 </div>
 	</div>
 	<footer>
 		<div class="container">
@@ -69,4 +131,9 @@
 		</div>
 	</footer>
 </body>
+<script src="<c:url value="/resources/js/jquery-1.11.0.min.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.gridster.min.js" />"></script>
+
+<script src="<c:url value="/resources/js/commons.js" />"></script>
 </html>
