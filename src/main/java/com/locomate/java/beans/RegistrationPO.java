@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -22,6 +24,7 @@ public class RegistrationPO {
 	@Column(name="username")
 	private String userName;
     @NotNull
+    @Size(min=6,max=9,message="password length should be between 6 to 9")
     @Valid
 	@Column(name="pswd")
 	private String password;	
@@ -31,13 +34,43 @@ public class RegistrationPO {
 	private String lastName;
 	@Column(name="mobileNo")
 	private String mobileNumber;
-	@Email
+
 	@Column(name="email")
 	private String email;
 	@Column(name="occupation")
 	private String occupation;
-	
-	
+	@Transient
+	private String errormsg;
+	@Transient
+	private String referrer;
+	@Transient
+	private String showMessage;
+	@Transient
+	private String confirmpassword;
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
+	}
+	public String getShowMessage() {
+		return showMessage;
+	}
+	public void setShowMessage(String showMessage) {
+		this.showMessage = showMessage;
+	}
+	public String getReferrer() {
+		return referrer;
+	}
+	public void setReferrer(String referrer) {
+		this.referrer = referrer;
+	}
+	public String getErrormsg() {
+		return errormsg;
+	}
+	public void setErrormsg(String errormsg) {
+		this.errormsg = errormsg;
+	}
 	public int getRegistratioId() {
 		return registratioId;
 	}

@@ -5,7 +5,7 @@
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
 	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
@@ -15,7 +15,9 @@
 		   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
 		    http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
 		    http://www.springframework.org/schema/data/jpa
-    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
@@ -73,9 +75,28 @@
 		   <beans:props>
 	       	      <beans:prop key="mail.smtp.auth">true</beans:prop>
 	       	      <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+	       	      <beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
 	       	   </beans:props>
 		</beans:property>
 	</beans:bean>
+	<!-- <beans:bean id="templateMailMessage" class="org.springframework.mail.SimpleMailMessage">
+
+	<beans:property name="from" value="vavinash1990@gmail.com" />
+	<beans:property name="to" value="receiver@gmail.com" />
+	<beans:property name="subject" value="Hello" />
+	<beans:property name="text">
+		<beans:value>
+        <![CDATA[
+            Dear %s,
+            Mail Content : %s
+        ]]>
+		</beans:value>
+	</beans:property>
+</beans:bean> -->
+<beans:bean id="userRegistrationService" class="com.locomate.java.helper.UserRegistrationHelper" >
+        <beans:property name="mailSender" ref="mailSender" />
+    </beans:bean> 
+	
 	
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -88,14 +109,30 @@
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<beans:property name="sessionFactory" ref="sessionFactory" />
 	</beans:bean>
-	<beans:bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<beans:property name="basename" value="/WEB-INF/mymessage" />
-	</beans:bean>
+	
 	<beans:bean class="com.locomate.java.beans.RegistrationPO"
 		id="registrationPO" />
+		<beans:bean class="com.locomate.java.beans.UploadFilePO"
+		id="uploadFilePO" />
 	<context:component-scan base-package="com.locomate.java" />
-	<!-- <beans:bean class="org.springframework.context.support.ResourceBundleMessageSource" 
-		id="messageSource"> <property name="basename" value="messages" /> </beans:bean> -->
+	 
+	 
+<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <beans:property name="basename" value="WEB-INF/messages" />
+    <beans:property name="defaultEncoding" value="UTF-8" />
+</beans:bean>
+<beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    <beans:property name="defaultLocale" value="en" />
+</beans:bean>
+
+<mvc:interceptors>
+    <beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <beans:property name="paramName" value="lang" />
+    </beans:bean>
+</mvc:interceptors>
+<beans:bean id="loginValidator" class="com.locomate.java.validations.LoginPOValidator" />
+<beans:bean id="registerValidator" class="com.locomate.java.validations.RegistrationPOValidator" />
+<!-- <beans:bean id="fileValidator" class="com.beingjavaguys.validator.FileValidator" />  
+   -->
 
 </beans:beans>

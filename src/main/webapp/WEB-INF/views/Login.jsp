@@ -37,21 +37,22 @@
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 			<br/>
-			<h3>Login</h3>			
+			<h3>Login</h3>	
+			<div id="errormsg" style="color:red">${ registerpo.errormsg}</div>	
+			
 			<hr>
 				<form:form  commandName="registerpo" action="./submitLogin" method="post">
-				<%-- <form action="./loginform" method="post" name="" role="form"> --%>
-					<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
+					<div style="color:blue">${registerpo.showMessage}</div>	
 					<div class="form-group">
 						<label for="UserName">Username</label> 
-						<input type="text" class="form-control" id="UserName" name="UserName"
-							placeholder="Enter Username">
+						<form:input path="userName" id="userName" cssClass="form-control"></form:input>
 					</div>
+					<form:errors path="userName" cssStyle="color:red"/>	
 					<div class="form-group">
 						<label for="Password">Password</label> 
-						<input type="password" class="form-control" id="Password"
-							name="Password" placeholder="Enter Password">
+							<form:password path="password" cssClass="form-control"/>
 					</div>
+					<form:errors path="firstName" cssStyle="color:red"/>
 					<a href="./forgotPassword">Forgot Password?</a>
 					<br/>
 					<br/>

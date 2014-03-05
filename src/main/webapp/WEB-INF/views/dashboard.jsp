@@ -45,6 +45,7 @@
                        	<img src='<c:url value="/resources/images/profilebig.png"/>' class="img-circle frame" />
                        	<br/>
                        	<h4>${name}</h4>
+                       	<a href="./displayUploadPicture" >Upload Picture</a>
 			        </li>			        			        			 	
 			 		<li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
 			 			<br/>

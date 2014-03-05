@@ -29,24 +29,25 @@
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
 			          <div class="dropdown-menu login">			            
-			          	<form action="./loginform" method="post" name="" role="form">
+			          	<form:form  commandName="registerpo" action="./submitLogin" method="post">
 							<%-- <form:errors path="*" cssClass="errorblock" element="div" /> --%>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label> 
-								<input type="text" class="form-control" id="userName" name="userName"
-									placeholder="Enter Username">
+								<form:input path="userName" id="userName" cssClass="form-control"></form:input>
 							</div>
+							<form:errors path="userName" cssStyle="color:red"/>	
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label> 
-								<input type="password" class="form-control" id="password"
-									name="password" placeholder="Enter Password">
+								<form:password path="password" cssClass="form-control"/>
 							</div>
-							<a href="./forgotPassword">Forgot Password?</a>
+							<form:errors path="password" cssStyle="color:red"/>	
+															
+                   <a href="./forgotPassword">Forgot Password?</a>
 							<br/>
 							<br/>
-							<button id="" class="btn btn-primary pull-left" formaction="./submitLogin">Login</button>
+							<button id="" class="btn btn-primary pull-left" type="submit">Login</button>
 							<button value="Register" class="btn btn-primary pull-right" formaction="./register">Register</button>										
-						</form>
+						</form:form>
 			          </div>
 			        </li>
 				</ul>
@@ -61,11 +62,16 @@
 			<br/>
 			<h3>Sign Up</h3>
 			<hr>
-				<form:form commandName="registerpo" action="./submitForm" id="" method="post" onsubmit="return ValidateForm(this);" role="form">
+				<form:form commandName="registerpo" action="./submitForm?referrer=fromRegister" id="" method="post" onsubmit="return ValidateForm(this);" role="form">
+					<form:errors path="" cssClass="color:red"/>
 					<input id="SnapHostID" name="SnapHostID" type="hidden" value="YN7YBJ7YDWGH" />
 					<script type="text/javascript">
 						function ValidateForm(frm) {
-						if (frm.FirstName.value == "") {alert('First Name is required.');frm.FirstName.focus();return false;}
+						if (frm.FirstName.value == "") {
+							alert('First Name is required.');
+							frm.FirstName.focus();
+							return false;
+							}
 						if (frm.LastName.value == "") {alert('Last Name is required.');frm.LastName.focus();return false;}
 						if (frm.Organization.value == "") {alert('Organization is required.');frm.Organization.focus();return false;}
 						if (frm.FromEmailAddress.value == "") {alert('Email address is required.');frm.FromEmailAddress.focus();return false;}
@@ -85,43 +91,72 @@
 						return false; }
 					</script>
 					
+					<div id="errormsg" style="color:red">${ registerpo.errormsg}</div>	
+					
 					<div class="form-group">
-						<label for="UserName">UserName*:</label> 
-						<input type="text" class="form-control" id="UserName" name="UserName"
-							placeholder="Enter Username">
+						<label for="UserName">UserName*:</label>
+						<!-- <input type="text" class="form-control" id="userName"
+							name="userName" placeholder="Enter "> -->
+						<%-- <form:input path="userName" cssClass="form-control" />  --%>
+						<form:input path="userName" id="userName" cssClass="form-control"></form:input>  
+                        
 					</div>
+					<form:errors path="userName" cssClass="warning"/>	
+					
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password:</label> 
-						<input type="password" class="form-control" id="password"
+						<%-- <input type="password" class="form-control" id="password"
 							name="password" placeholder="Enter Password">
+							<form:input path="password" cssClass="form-control" /> --%>
+							<form:password path="password" cssClass="form-control"/>
 					</div>
+					<form:errors path="password" cssClass="warning"/>	
+					<div class="form-group">
+								<label for="exampleInputPassword1">Confirm Password</label> 
+								<form:password path="confirmpassword" cssClass="form-control"/>
+							</div>
+                   <div id="errormsg" style="color:red">${ registerpo.errormsg}</div>
 					<div class="form-group">
 						<label for="FirstName">FirstName*:</label> 
-						<input type="text" class="form-control" id="FirstName"
-							name="FirstName" placeholder="Enter First Name">
+					<!-- 	<input type="text" class="form-control" id="FirstName"
+							name="firstName" placeholder="Enter First Name"> -->
+							<form:input path="firstName" id="firstName" cssClass="form-control"></form:input>  
 					</div>
+					<form:errors path="firstName" cssClass="warning"/>	
 					<div class="form-group">
 						<label for="LastName">LastName*:</label> 
-						<input type="text" class="form-control" id="LastName"
-							name="LastName" placeholder="Enter Last Name">
+						<!-- <input type="text" class="form-control" id="LastName"
+							name="lastName" placeholder="Enter Last Name"> -->
+							<form:input path="lastName" id="lastName" cssClass="form-control"></form:input>  
 					</div>
+						<form:errors path="lastName" cssClass="warning"/>	
 					<div class="form-group">
-						<label for="LastName">Occupation*:</label> 
-						<input type="text" class="form-control" id="Occupation"
-							name="Occupation" placeholder="Enter Occupation">
+						<label for="occupation" id="">Occupation*:</label> 
+              <!--  <select id="occupationdropsid" name="occupationdropsname">
+            <option value="general" id="">Student</option>
+            <option value="sales" id="empid">Employee</option>
+        </select> -->
+						<!-- <input type="text" class="form-control" id="Occupation"
+							name="Occupation" placeholder="Enter Occupation"> -->
+							<form:input path="occupation" id="Occupation" cssClass="form-control"></form:input> 
 					</div>
+					<form:errors path="lastName" cssClass="warning"/>	
+					
 					<div class="form-group">
 						<label for="email">Email address*:</label> 
-						<input type="text" class="form-control" id="email"
-							name="email" placeholder="Enter Email Address">
+						<!-- <input type="text" class="form-control" id="email"
+							name="email" placeholder="Enter Email Address"> -->
+							<form:input path="email" cssClass="form-control"/>
 					</div>
+					<form:errors path="email" cssClass="warning"></form:errors>
 					<div class="form-group">
-						<label for="email">Cell Phone*:</label> 
-						<input type="text" class="form-control" id="mobileNumber"
-							name="mobileNumber" placeholder="Enter Mobile Number">
+						<label for="mobileNumber">Cell Phone*:</label> 
+						
+							<form:input path="mobileNumber" cssClass="form-control"/>
 					</div>
+					<form:errors path="mobileNumber" cssClass="warning"></form:errors>
 					<br/>
-					<label>* - required fields.</label> <input id="skip_Submit" name="skip_Submit" type="submit"  class="btn btn-primary pull-right" value="Submit" />
+					 <input id="skip_Submit" name="skip_Submit" type="submit"  class="btn btn-primary pull-right" value="Submit" />
 					<br />
 				</form:form>
 			</div>
