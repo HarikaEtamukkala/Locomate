@@ -17,9 +17,21 @@
 
  <h1>Spring Multiple File Upload example</h1>
 
-     ${files} uploaded successfully.
-     <div>${pic}</div>
+   <hr width=600 >
 
+<p align="center">
+<c:out value="${filepath}"></c:out>
+<img src="${filepath}" alt="Upload Image" />
+
+<br>
+
+<c:out value="FileName :: "></c:out>
+
+<c:out value="${fileName}"></c:out>
+
+<c:out value="-Uploaded Successfully."></c:out>
+
+</p>
  </body>
 
 </html>

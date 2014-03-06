@@ -22,19 +22,28 @@ public class UploadFilePO {
 	@Lob
 	@Column(name="img",nullable=false, 
 	columnDefinition="longblob")
-	 private Blob  file;
+	 private MultipartFile  file;
+	 @Lob
+	    private Blob content;
+	public Blob getContent() {
+		return content;
+	}
+	public void setContent(Blob content) {
+		this.content = content;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Blob getFile() {
+	public MultipartFile getFile() {
 		return file;
 	}
-	public void setFile(Blob file) {
+	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
+	
 	
 
 }

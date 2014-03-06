@@ -11,10 +11,10 @@
 </head>
 
 <body>
-  <form:form method="post" action="./saveFile"
+  <form:form method="post" action="./images"
         modelAttribute="uploadForm" commandName="uploadForm" enctype="multipart/form-data" >
             <input type="file" name="file"/>
-            <input type="submit"/>
+            <input type="submit" value="UploadFilePO"/>
         </form:form>
 
 </body>

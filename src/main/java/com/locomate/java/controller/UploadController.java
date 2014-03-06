@@ -3,10 +3,12 @@ package com.locomate.java.controller;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Blob;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import org.hibernate.Hibernate;
@@ -38,29 +40,39 @@ public class UploadController {
 	}
 @SuppressWarnings("deprecation")
 
-@RequestMapping("/saveFile")
+@RequestMapping("/images")
 
 public String pictureSave(@ModelAttribute("uploadForm") UploadFilePO uploadForm,Model model,
-		@RequestParam MultipartFile file) throws IOException, ServletException{
-	try {
-        Blob blob = Hibernate.createBlob(file.getInputStream());
+		HttpServletRequest request,
+        HttpServletResponse response, Object command,  @RequestParam("file") MultipartFile file) throws IOException, ServletException{
 
-        uploadForm.setFile(blob);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-	       /* String fileName = "";
-	        int read =0;
-	        FileOutputStream fos = new FileOutputStream("file");
-	        
-	       Part filepart= request.getPart("file");
-	       filepart.getInputStream().read(arg0);
-	        if (multipartFiles != null) {
-	        	fileName = multipartFiles.getOriginalFilename();
-	        }
-	        model.addAttribute("files",fileName);*/
-	
-	uploadproxy.saveImage(uploadForm);
+       String fileName="";
+   
+	     try{
+	    	 InputStream inputStream = null;
+	    	 OutputStream outputStream = null;
+	    	 if(file.getSize()>0){
+	    		 inputStream =file.getInputStream();
+	    		 fileName =  request.getRealPath("") +
+	                     "/images/"+ file.getOriginalFilename();
+	    		/* Blob blob = Hibernate.createBlob(file.getInputStream());
+	    		 uploadForm.setContent(blob);
+	    		 uploadproxy.saveImage(uploadForm);*/
+	    		 outputStream = new FileOutputStream(fileName);
+	    		 int readBytes=0;
+	    		 byte[] buffer = new byte[10000];
+	    		 while ((readBytes = inputStream.read(buffer, 0, 10000)) != -1) {
+                     outputStream.write(buffer, 0, readBytes);
+               }
+	    		 outputStream.close();
+                 inputStream.close(); 
+	    	 }
+	     }catch(Exception e){
+	    		 e.printStackTrace();
+	    	 }
+	     
+         model.addAttribute("fileName", file.getOriginalFilename());
+         model.addAttribute("filepath", "images/"+file.getOriginalFilename());
 	        return "viewImage";
 	
 	    }
