@@ -22,7 +22,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./postride">Post Ride</a></li>
+					<li><a href="./offer">Offer Ride</a></li>
+					<li><a href="./request">Request Ride</a></li>
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${name}<b class="caret"></b></a>
 			          <ul class="dropdown-menu">
@@ -76,7 +77,7 @@
 			        		<span class="glyphicon glyphicon-comment"></span>
 				        	<br>
 				        	Offer Ride
-			        	</p>					        			        
+			        	</p>   			        
 			        </li>					
 					<!-- Row 3  -->
 					<li data-row="3" data-col="1" data-sizex="2" data-sizey="1">

@@ -17,30 +17,36 @@ public class MiscController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "about", method = RequestMethod.GET)
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Model model) {
 		logger.info("About Us page");
 		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 		return "about";
 	}
 	
-	@RequestMapping(value = "team", method = RequestMethod.GET)
+	@RequestMapping(value = "/team", method = RequestMethod.GET)
 	public String team(Model model) {
 		logger.info("Team page");
 		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 		return "team";
 	}
 	
-	@RequestMapping(value = "terms", method = RequestMethod.GET)
+	@RequestMapping(value = "/terms", method = RequestMethod.GET)
 	public String terms(Model model) {
 		logger.info("Terms page");
 		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 		return "terms";
 	}
-	@RequestMapping(value = "chpass", method = RequestMethod.GET)
+	@RequestMapping(value = "/chpass", method = RequestMethod.GET)
 	public String chpass(Model model) {
 		logger.info("Terms page");
 		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 		return "changePassword";
+	}
+	@RequestMapping(value = "/offer", method = RequestMethod.GET)
+	public String offer(Model model) {
+		logger.info("offer");
+		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
+		return "offer";
 	}
 }
