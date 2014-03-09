@@ -22,7 +22,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./postride">Post Ride</a></li>
+					<li><a href="./displayPostRide">Post Ride</a></li>
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${name}<b class="caret"></b></a>
 			          <ul class="dropdown-menu">
