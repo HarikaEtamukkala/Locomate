@@ -8,6 +8,7 @@
     <session-factory>
         <mapping class="com.locomate.java.beans.RegistrationPO" />
         <mapping class="com.locomate.java.beans.UploadFilePO" />
+         <mapping class="com.locomate.java.beans.PostRidePO" />
     </session-factory> 
 </hibernate-configuration>
 
