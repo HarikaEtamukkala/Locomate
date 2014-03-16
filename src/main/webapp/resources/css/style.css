@@ -1,4 +1,3 @@
-@CHARSET "ISO-8859-1";
 
 .login{width:500px;padding:15px;}
 .main{min-height:500px;}
@@ -9,9 +8,7 @@
 	background-color: white;	
 	text-align: center;
 	vertical-align: middle;
-	padding:auto;
 }
-
 .gridster .search{position:relative;margin: auto;}
 .gridster .glyphicon{font-size:32px;}
 .blackbg{background-color: #444444;}
@@ -22,19 +19,17 @@
 .skybluebg{background-color:#5bc0de !important; color:white;}
 .spanwhite{font-size: 24px; color:black;}
 .glyphicon-search{background-image:url('../images/ic_fordon-web.png');}
-<<<<<<< HEAD
 .isa_info, .isa_success, .warning, .error {
     border: 1px solid;
     margin: 10px 0px;
     padding:6px 10px 5px 40px;
     background-repeat: no-repeat;
     background-position: 10px center;-moz-border-radius:.5em;
--webkit-border-radius:.5em;
-border-radius:.5em;
- 
+	-webkit-border-radius:.5em;
+	border-radius:.5em;
 }
 .warning{
-	 color: #9F6000;
+	color: #9F6000;
     background-color: #FEEFB3;
     background-image: url(../images/warning.png ) ;
 }
@@ -42,9 +37,8 @@ border-radius:.5em;
 	color: #D8000C;
     background-color: #FFBABA;
     background-image: url(../images/error.png);
-=======
+}
 #mapdiv{width:100%;height:400px;}
-
 .placeauto input[type=text] {
   display: block;
   width: 100%;
@@ -84,6 +78,60 @@ fieldset[disabled] .placeauto input[type=text] {
   cursor: not-allowed;
   background-color: #eee;
   opacity: 1;
->>>>>>> dont remember
 }
-
+.fb-login-button{
+    background-image: url(/java/resources/images/active_404.png);
+    display:block;
+    height:46px;
+    width:202px;
+}
+.fb-login-button:hover{
+    background-image: url(/java/resources/images/pressed_404.png);
+    display:block;
+    height:46px;
+    width:202px;
+}
+.g-login-button{
+    background-image: url(/java/resources/images/Red-signin-Long-base-32dp.png);
+    display:block;
+    height:42px;
+    width:197px;
+}
+.g-login-button:hover{
+    background-image: url(/java/resources/images/Red-signin-Long-press-32dp.png);
+    display:block;
+    height:42px;
+    width:197px;
+}
+.center{
+	margin:auto;
+}
+.t-login-button{
+    background-image: url(/java/resources/images/sign-in-with-twitter-gray.png);
+    display:block;
+    height:28px;
+    width:158px;
+}
+.t-login-button:hover{
+    background-image: url(/java/resources/images/sign-in-with-twitter-gray.png);
+    display:block;
+    height:28px;
+    width:158px;
+}
+.imageContainer{
+	min-width:100px;
+	min-height:200px;	
+}
+.imageContainer input{
+	display: table-cell;
+	margin:auto;
+	vertical-align: middle;
+}
+.list{
+	width:100%;
+	height:100%;
+}
+.imagehundredPer{
+	width:100%;
+	height:100%;
+}

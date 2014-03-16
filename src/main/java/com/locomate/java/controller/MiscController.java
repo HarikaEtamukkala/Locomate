@@ -56,4 +56,11 @@ public class MiscController {
 		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
 		return "fileUpload";
 	}
+	
+	@RequestMapping(value="/imageuploader",method=RequestMethod.GET)
+	public String imageUpload(Model model) {
+		logger.info("fileupload");
+		model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));		
+		return "ImageUploader";
+	}
 }
