@@ -96,7 +96,14 @@
 
 	<beans:bean class="com.locomate.java.beans.RegistrationPO"
 		id="registrationPO" />
+<<<<<<< HEAD
 	<beans:bean class="com.locomate.java.beans.UploadFilePO" id="uploadFilePO" />
+=======
+		<beans:bean class="com.locomate.java.beans.UploadFilePO"
+		id="uploadFilePO" />
+		<beans:bean class="com.locomate.java.beans.PostRidePO"
+		id="postRidePO" />
+>>>>>>> 16779f296188fe29de21960d6a2b6ec9cd258bd6
 	<context:component-scan base-package="com.locomate.java" />
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

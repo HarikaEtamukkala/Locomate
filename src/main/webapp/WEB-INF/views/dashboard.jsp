@@ -22,12 +22,14 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./offer">Offer Ride</a></li>
-					<li><a href="./request">Request Ride</a></li>
+					<li><a href="./displayPostRide">Post Ride</a></li>
+					<li><a href="./offer">Dashboard</a></li>
+					<li><a href="./offer"></a></li>
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${name}<b class="caret"></b></a>
 			          <ul class="dropdown-menu">
 			            <li><a href="#">Edit Account</a></li>
+			            <li><a href="#">DashBoard</a></li>
 			            <li><a href="#">Change Password</a></li>
 			            <li class="divider"></li>
 			            <li><a href="./logout">Logout</a></li>
@@ -42,7 +44,7 @@
 	  		<div class="gridster">
 			    <ul>
 			    	<!-- Row 1 -->
-			        <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+			        <li data-row="1" data-col="1" data-sizex="2" data-sizey="3">
                        	<img src='<c:url value="/resources/images/profilebig.png"/>' class="img-circle frame" />
                        	<br/>
                        	<h4>${name}</h4>
@@ -50,47 +52,51 @@
 			        </li>			        			        			 	
 			 		<li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
 			 			<br/>
-			 			<h1 class="blue"><span class="glyphicon glyphicon-road"></span>&nbsp;4800<br><span class="spanwhite">Kilometers</span></h1>
+			 			<h1 class="blue"><span class="glyphicon glyphicon-road"></span><br><span class="spanwhite">Upcoming Trips</span></h1>
 			 		</li>	        				 
 			        <li data-row="1" data-col="5" data-sizex="2" data-sizey="1">
 			        	<br>
-			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;5<span class="spanwhite"> &nbsp;Cities</span></h1>
+			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;5<span class="spanwhite"> &nbsp;Messages</span></h1>
 			        </li>
-			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1" class="btn skybluebg">
+			        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class="btn skybluebg">
 			        	<br>
 			        	<p class="search">
 			        		<span class="glyphicon glyphicon-info-sign"></span>
 				        	<br>
-				        	Know More
+				        	My Profile
 			        	</p>					        			        
 			        </li>
 			        
 			        <!-- Row 2 -->
 			        <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
 			 			<br>
-			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;31<br><span class="spanwhite">Destinations</span></h1>
+			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<br><span class="spanwhite">Request Received</span></h1>
 			 		</li>	
-			        <li data-row="2" data-col="5" data-sizex="2" data-sizey="1"></li>			
+			        <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+			 			<br>
+			        	<h1 class="blue"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<br><span class="spanwhite">Request Sent</span></h1>
+			 		</li>			
 					<li data-row="2" data-col="7" data-sizex="1" data-sizey="1" class="btn greenbg">
 			        	<br>
 			        	<p class="search">
 			        		<span class="glyphicon glyphicon-comment"></span>
 				        	<br>
-				        	Offer Ride
+				        	<a href="displayPostRide">Offer Ride</a>
+				        	
 			        	</p>   			        
 			        </li>					
 					<!-- Row 3  -->
-					<li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+					<%-- <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
 			        	<br>
 			 			<img src='<c:url value="/resources/images/friend.png" />' width='32px;'><span style='font-size:35px; color: #3276b1;'>Thousands</span><br>of Friendships made <br>on the road
-			 		</li>
+			 		</li> --%>
 					<li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
 			 			<br>
-			        	<img src='<c:url value="/resources/images/gas.png" />'><span style='font-size:35px; color: #3276b1;'>Millions</span> <br>of liters gas saved
+			        	<img src='<c:url value="" />'><span style='font-size:35px; color: #3276b1;'>Total Trips</span>
 			        </li>	
 					<li data-row="3" data-col="5" data-sizex="2" data-sizey="1">
 			        	<br>
-			        	<img src='<c:url value="/resources/images/co2.png"/>'><span style='font-size:35px; color: #3276b1;'>Million</span> <br>of Tons of Carbon <br>Emissions saved
+			        	<img src='<c:url value=""/>'><span style='font-size:35px; color: #3276b1;'> Cancelled Trips</span> 
 			        </li>	
 			        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1" class="btn bluebg">
 			        	<br>
