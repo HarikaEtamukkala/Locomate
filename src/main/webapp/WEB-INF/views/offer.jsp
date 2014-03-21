@@ -51,21 +51,6 @@
 			<div class="row">
 				<div class="col-md-6 placeauto">
 					<div class="form-group">
-					<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-						<script>
-$(document).ready(function(){
-  $("#hide").click(function(){
-    $("p").hide();
-  });
-  $("#show").click(function(){
-    $("p").show();
-  });
-});
-</script>
-	  		<p>If you click on the "Hide" button, I will disappear.</p>
-<button id="hide">Hide</button>
-<button id="show">Show</button>
 					</div>
 					<div class="form-group">
 						<label for="toPlace">To:</label> 
